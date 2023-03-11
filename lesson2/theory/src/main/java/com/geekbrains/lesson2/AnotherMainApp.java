@@ -98,5 +98,15 @@ public class AnotherMainApp {
         // Runnable - функциональный интерфейс, поэтому можем написать вот так коротко с использованием лямбды
         new Thread(() -> System.out.println(1)).start();
 
+        doSomething(
+                (a, b, c)  -> {
+                    System.out.println(a + b + c);
+                }
+        );
     }
+
+    public static void doSomething(MyInterface myInterface) {
+        myInterface.sum(1, 1, 1);
+    }
+
 }
