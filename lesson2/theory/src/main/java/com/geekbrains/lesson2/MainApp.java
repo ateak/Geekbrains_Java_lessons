@@ -17,6 +17,15 @@ public class MainApp {
             transport.start();
             this.currentTransport = transport;
         }
+
+        public void skateBoardParkActions() {
+            if(!(currentTransport instanceof Skateboard)) {
+                System.out.println("К сожалению, я не взял с собой скейтборд");
+                return;
+            }
+            Skateboard skateboard = (Skateboard)currentTransport;
+            //skateboard.makeТрюк();
+        }
     }
 
     static class Car implements Transport{
@@ -62,12 +71,11 @@ public class MainApp {
     }
 
     public static void main(String[] args) {
-        Moto moto = new Moto();
+        Transport transport = new Moto();
         Car car = new Car();
         Human human = new Human();
         human.stop();
-        human.drive(moto);
-        human.stop();
+
         human.drive(car);
         human.stop();
         human.stop();
