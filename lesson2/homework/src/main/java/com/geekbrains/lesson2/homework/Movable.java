@@ -1,6 +1,6 @@
 package com.geekbrains.lesson2.homework;
 
 public interface Movable {
-    void run();
-    void jump();
+    boolean run(RunningTrack track);
+    boolean jump(Wall wall);
 }
