@@ -90,10 +90,26 @@ public class MainApp {
                     throw new MyLibVectorProcessingException(i, arr);
                 }
             } catch (MyLibVectorProcessingException e) {
-                arr[i] = 0;
+                arr[e.getIndex()] = 0;
             }
         }
         System.out.println(Arrays.toString(arr));
+
+        int[] data = {1,2,3,4,5};
+        // int index = User input
+        int index = 12;
+        //если есть возможность защититься с помощью if/else, то лучше делать так. Не стоит везде пихать try/catch
+//        if (index < data.length) {
+//
+//        } else {
+//
+//        }
+        //
+        try {
+            System.out.println(data[index]);
+        } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
+            System.out.println(1);
+        }
     }
 
 //    public static int doSomething() throws FileNotFoundException {
