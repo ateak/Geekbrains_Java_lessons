@@ -1,5 +1,6 @@
 package com.geekbrains.lesson3.exceptions;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -38,35 +39,69 @@ public class MainApp {
 //        } finally {
 //            System.out.println(1);
 //        }
-        FileOutputStream out = null;
-        try {
-            out = new FileOutputStream("1.txt");
-            out.write(1);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (out != null) {
-                    out.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+
+
+
+//        FileOutputStream out = null;
+//        try {
+//            out = new FileOutputStream("1.txt");
+//            out.write(1);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } finally {
+//            try {
+//                if (out != null) {
+//                    out.close();
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        // другой вариант вышенаписанного, начиная с Java 8
+//        try (FileOutputStream out2 = new FileOutputStream("1.txt");
+//             FileInputStream in = new FileInputStream("2.txt")) {
+//
+//        } catch (IOException e) {
+//
+//        }
+
+
+        //MyLibMatrixProcessingException
+//        int[][] arr = {
+//                {1, 2, 3},
+//                {4, 5, 6},
+//                {7, 8, 9}
+//        };
+//        for (int i = 0; i < arr.length; i++) {
+//            for (int j = 0; j < arr[i].length; j++) {
+//                if (arr[i][j] == 7 || arr[i][j] == 12) {
+//                    throw new MyLibMatrixProcessingException(i, j, arr);
+//                }
+//            }
+//        }
+
+
+        //MyLibVectorProcessingException
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 7 || arr[i] == 12) {
+                throw new MyLibVectorProcessingException(i, arr);
             }
         }
     }
 
-    public static int doSomething() throws FileNotFoundException {
-       try {
-           return 1;
-       } finally {
-           return 2;
-       }
-    }
-
-    public static int sqrt(int n) {
-        if (n < 0) {
-            throw new ArithmeticException("Невозможно взять корень из отрицательного числа");
-        }
-        return n / 2;
-    }
+//    public static int doSomething() throws FileNotFoundException {
+//       try {
+//           return 1;
+//       } finally {
+//           return 2;
+//       }
+//    }
+//
+//    public static int sqrt(int n) {
+//        if (n < 0) {
+//            throw new ArithmeticException("Невозможно взять корень из отрицательного числа");
+//        }
+//        return n / 2;
+//    }
 }
