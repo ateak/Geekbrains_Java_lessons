@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.util.Arrays;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -82,12 +83,17 @@ public class MainApp {
 
 
         //MyLibVectorProcessingException
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 7 || arr[i] == 12) {
-                throw new MyLibVectorProcessingException(i, arr);
+            try {
+                if (arr[i] == 7 || arr[i] == 12) {
+                    throw new MyLibVectorProcessingException(i, arr);
+                }
+            } catch (MyLibVectorProcessingException e) {
+                arr[i] = 0;
             }
         }
+        System.out.println(Arrays.toString(arr));
     }
 
 //    public static int doSomething() throws FileNotFoundException {
