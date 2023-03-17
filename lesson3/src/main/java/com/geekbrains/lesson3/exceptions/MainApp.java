@@ -42,7 +42,6 @@ public class MainApp {
         try {
             out = new FileOutputStream("1.txt");
             out.write(1);
-            out.close();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
