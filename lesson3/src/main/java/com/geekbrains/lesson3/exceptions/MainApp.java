@@ -46,7 +46,9 @@ public class MainApp {
             e.printStackTrace();
         } finally {
             try {
-                out.close();
+                if (out != null) {
+                    out.close();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
