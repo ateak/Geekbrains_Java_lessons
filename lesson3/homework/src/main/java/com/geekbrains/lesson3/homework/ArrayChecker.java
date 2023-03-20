@@ -12,17 +12,14 @@ public class ArrayChecker {
     }
 
     public void handleArray(String[][] arr) throws MyArrayException {
-        if (arrLength != arr.length) {
+        if (arr.length != arrLength) {
             throw new MyArraySizeException();
         }
 
         for (int i = 0; i < arr.length; i++) {
-            if (arrLength != arr[i].length) {
+            if (arr[i].length != arrLength) {
                 throw new MyArraySizeException();
             }
-        }
-
-        for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 try {
                     intArr[i][j] = Integer.valueOf(arr[i][j]);
