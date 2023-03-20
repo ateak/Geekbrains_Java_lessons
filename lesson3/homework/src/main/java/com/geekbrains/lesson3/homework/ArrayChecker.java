@@ -20,6 +20,9 @@ public class ArrayChecker {
             if (arr[i].length != arrLength) {
                 throw new MyArraySizeException();
             }
+        }
+
+        for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 try {
                     intArr[i][j] = Integer.valueOf(arr[i][j]);
