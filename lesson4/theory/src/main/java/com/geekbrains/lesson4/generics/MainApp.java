@@ -55,18 +55,7 @@ public class MainApp {
         // а справа пытаемся ограничиться только одним классом Integer. Возникает противоречие.
         //GenBox<Number> gbx = new GenBox<Integer>(123);
 
-//        method1(new int[]{1,2,3,4,5});
-//        method2(1,2,3,4,5);
-
     }
-
-//    public static void method1(int[] arr) {
-//
-//    }
-//    // аргумент переменной длины мб только один, он стоит всегда справа
-//    public static void method2(int... arr) {
-//
-//    }
 
     //обобщенный метод
 //    public static <T> T getFirstElement(List<T> list) {
