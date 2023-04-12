@@ -12,13 +12,13 @@ public class Main {
         Orange redOrange = new Orange(2.7f);
         Orange tastyOrange = new Orange(1.4f);
 
-        Box<Apple> box1 = new Box();
+        Box<Apple> box1 = new Box<>();
         box1.addFruitToBox(justApple);
         box1.addFruitToBox(greenApple);
         box1.addFruitToBox(redApple);
         box1.addFruitToBox(yellowApple);
 
-        Box<Orange> box2 = new Box();
+        Box<Orange> box2 = new Box<>();
         box2.addFruitToBox(orange);
         box2.addFruitToBox(smallOrange);
         box2.addFruitToBox(redOrange);
@@ -36,7 +36,6 @@ public class Main {
         System.out.println(box4.getWeight());
 
 
-
         if (box1.compare(box2)) {
             System.out.println("boxes have the same weight");
         }
@@ -51,8 +50,6 @@ public class Main {
             System.out.println("boxes aren't equal");
         }
 
-
-
-
+        box1.putFruitToAnotherBox(box4);
     }
 }

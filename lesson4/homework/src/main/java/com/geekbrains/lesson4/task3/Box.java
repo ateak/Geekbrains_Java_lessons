@@ -3,26 +3,27 @@ package com.geekbrains.lesson4.task3;
 import java.util.ArrayList;
 
 public class Box <F extends Fruit> {
+
+
     private ArrayList<F> fruitBox = new ArrayList<>();
-    //private int fruitAmount;
     private float boxWeight;
 
-    public ArrayList<F> getFruit() {
+    public ArrayList<F> getFruitBox() {
         return fruitBox;
-    }
-    public void setFruit(ArrayList<F> fruitBox) {
-        this.fruitBox = fruitBox;
     }
 
     public float getWeight() {
-        for(F fruit : fruitBox) {
+        if (fruitBox.size() == 0) {
+            return 0.0f;
+        }
+        for (F fruit : fruitBox) {
             boxWeight = boxWeight + fruit.weight;
             //System.out.println(fruit);
         }
         return boxWeight;
     }
 
-    public boolean compare(Box box) {
+    public boolean compare(Box<?> box) {
         if (this.boxWeight == box.boxWeight)
             return true;
         return false;
@@ -33,8 +34,10 @@ public class Box <F extends Fruit> {
     }
 
     public void putFruitToAnotherBox(Box<F> box) {
+        if (this == box) {
+            return;
+        }
         box.fruitBox.addAll(this.fruitBox);
         this.fruitBox.clear();
     }
-
 }
