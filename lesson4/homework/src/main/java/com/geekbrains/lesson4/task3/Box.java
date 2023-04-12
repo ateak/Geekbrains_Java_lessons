@@ -17,16 +17,14 @@ public class Box <F extends Fruit> {
             return 0.0f;
         }
         for (F fruit : fruitBox) {
-            boxWeight = boxWeight + fruit.weight;
+            boxWeight += fruit.weight;
             //System.out.println(fruit);
         }
         return boxWeight;
     }
 
     public boolean compare(Box<?> box) {
-        if (this.boxWeight == box.boxWeight)
-            return true;
-        return false;
+        return this.boxWeight == box.boxWeight;
     }
 
     public void addFruitToBox(F fruit) {
